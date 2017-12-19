@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.where(user_id: current_user.id)
   end
 
   # GET /questions/1
@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    current_user.questions << @question
 
     respond_to do |format|
       if @question.save
