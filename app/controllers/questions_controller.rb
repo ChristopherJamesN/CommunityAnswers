@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
-    render :index
+    render :answer
   end
 
   def your_questions
