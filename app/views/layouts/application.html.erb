@@ -12,10 +12,46 @@
   </head>
 
   <body>
-    <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
-    <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
-    <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if !current_user %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", "/users/sign_up", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_url, class: "nav-link" %>
+          </li>
+          <% elsif current_user %>
+          <li class="nav-item">
+            <a class="nav-link" href="/questions">Answer Questions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/questions/new">New Question</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/questions">Your Questions</a>
+          </li>
+          <% end %>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <br>
+    <div class="container">
+      <%= content_tag(:div, flash[:error], :id => "flash_error", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:error] %>
+      <%= content_tag(:div, flash[:notice], :id => "flash_notice", class: "alert alert-success alert-dismissable", data: { dismiss: 'alert' }) if flash[:notice] %>
+      <%= content_tag(:div, flash[:alert], :id => "flash_alert", class: "alert alert-danger alert-dismissable", data: { dismiss: 'alert' }) if flash[:alert] %>
+      <%= yield %>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
