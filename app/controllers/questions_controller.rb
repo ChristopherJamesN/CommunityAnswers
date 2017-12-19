@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.where(user_id: !current_user.id)
+    render :answer
   end
 
   def your_questions
