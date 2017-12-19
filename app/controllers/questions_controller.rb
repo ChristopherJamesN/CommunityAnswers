@@ -5,13 +5,16 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.where(user_id: !current_user.id)
-    render :answer
+    @questions = Question.all
+    render :index
   end
 
   def your_questions
     @questions = Question.where(user_id: current_user.id)
     render :index
+  end
+
+  def home
   end
 
   # GET /questions/1
