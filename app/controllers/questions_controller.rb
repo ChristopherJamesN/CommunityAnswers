@@ -5,7 +5,12 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    @questions = Question.where(user_id: !current_user.id)
+  end
+
+  def your_questions
     @questions = Question.where(user_id: current_user.id)
+    render :index
   end
 
   # GET /questions/1
