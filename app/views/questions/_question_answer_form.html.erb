@@ -12,24 +12,13 @@
   </div>
 <% end %>
 
-<div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="yes" value="yes" checked="checked">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="no" value="no">
-    No
-  </label>
-</div>
-<div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="unsure" value="unsure">
-    Unsure
-  </label>
-</div>
+<div class="form-group">
+    <select class="form-control" name="question">
+      <option>Yes</option>
+      <option>No</option>
+      <option>Unsure</option>
+    </select>
+  </div>
 
 <div class="actions">
   <button type="submit" class="btn btn-primary">Submit</button>

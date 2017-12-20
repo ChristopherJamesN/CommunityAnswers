@@ -8,8 +8,8 @@
 
 
 User.create!(email: 'chris@email.com', password: 'password', id: 0)
-Question.create!(content: 'Should I buy a new iPhone?', user_id: 0)
-Question.create!(content: 'Should I get my 8 year old daughter a dog?', user_id: 0)
-Question.create!(content: 'Is $20 per month a reasonable allowance for an 11 year old boy?', user_id: 0)
-Question.create!(content: 'Is it worth it to upgrade my internet speed from 15 mbps to 30 mbps for $20 more per month?', user_id: 0)
-Question.create!(content: 'Is living in downtown San Francisco worth the cost of living?', user_id: 0)
+Question.create!(content: 'Should I buy a new iPhone?', user_id: 0, yes: 0, no: 0, unsure: 0)
+Question.create!(content: 'Should I get my 8 year old daughter a dog?', user_id: 0, yes: 0, no: 0, unsure: 0)
+Question.create!(content: 'Is $20 per month a reasonable allowance for an 11 year old boy?', user_id: 0, yes: 0, no: 0, unsure: 0)
+Question.create!(content: 'Is it worth it to upgrade my internet speed from 15 mbps to 30 mbps for $20 more per month?', user_id: 0, yes: 0, no: 0, unsure: 0)
+Question.create!(content: 'Is living in downtown San Francisco worth the cost of living?', user_id: 0, yes: 0, no: 0, unsure: 0)

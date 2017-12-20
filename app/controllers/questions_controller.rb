@@ -56,13 +56,21 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
-        format.json { render :show, status: :ok, location: @question }
-      else
-        format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+    if params[:question]["Yes"]
+      @question.yes += 1
+    elsif params[:question]["No"]
+      @question.no += 1
+    elsif params[:question]["Unsure"]
+      @question.unsure += 1
+    else
+      respond_to do |format|
+        if @question.update(question_params)
+          format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+          format.json { render :show, status: :ok, location: @question }
+        else
+          format.html { render :edit }
+          format.json { render json: @question.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
