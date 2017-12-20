@@ -1,0 +1,38 @@
+<%= form_with(model: question, local: true) do |form| %>
+<% if question.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(question.errors.count, "error") %>
+      prohibited this question from being saved:</h2>
+
+    <ul>
+      <% question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="yes" value="yes" checked="checked">
+    Yes
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="no" value="no">
+    No
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="unsure" value="unsure">
+    Unsure
+  </label>
+</div>
+
+<div class="actions">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<% end %>
