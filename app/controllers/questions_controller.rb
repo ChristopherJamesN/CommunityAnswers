@@ -58,18 +58,21 @@ class QuestionsController < ApplicationController
   def update
     if params[:question]["Yes"]
       @question.update(yes: @question.yes + 1)
+      current_user.questions << @question
       respond_to do |format|
         format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
         format.json { render :show, status: :ok, location: @question }
       end
     elsif params[:question]["No"]
       @question.update(no: @question.no + 1)
+      current_user.questions << @question
       respond_to do |format|
         format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
         format.json { render :show, status: :ok, location: @question }
       end
     elsif params[:question]["Unsure"]
       @question.update(unsure: @question.unsure + 1)
+      current_user.questions << @question
       respond_to do |format|
         format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
         format.json { render :show, status: :ok, location: @question }
