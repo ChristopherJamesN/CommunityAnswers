@@ -20,6 +20,11 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    if @question.user_id == current_user.id
+      render :show
+    else
+      render :question_answer
+    end
   end
 
   # GET /questions/new
