@@ -21,9 +21,6 @@
         <td><%= question.unsure %></td>
         <td><%= question.comments %></td>
         <td><%= link_to 'Show', question %></td>
-        <% if current_user.id == question.user_id %>
-          <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
