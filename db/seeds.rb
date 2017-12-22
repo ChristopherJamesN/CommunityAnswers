@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(email: 'chris@email.com', password: 'password', age: 26, sex: 'male', id: 0)
+User.create!(email: 'chris@email.com', password: 'password', age: 26, sex: 'male', id: 0, points: 0)
 Question.create!(content: 'Should I buy a new iPhone?', user_id: 0, yes: 0, no: 0, unsure: 0)
 Question.create!(content: 'Should I get my 8 year old daughter a dog?', user_id: 0, yes: 0, no: 0, unsure: 0)
 Question.create!(content: 'Is $20 per month a reasonable allowance for an 11 year old boy?', user_id: 0, yes: 0, no: 0, unsure: 0)
