@@ -40,6 +40,9 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.no = 0
+    @question.yes = 0
+    @question.unsure = 0
     current_user.questions << @question
 
     respond_to do |format|
