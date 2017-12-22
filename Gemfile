@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#File uploader gem
 gem 'carrierwave'
+#For different versions of an image
+gem 'mini_magick'
 #Add devise gem to handle user authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
