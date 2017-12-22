@@ -15,6 +15,11 @@
     <%= form.text_field :content, id: :question_content, class: "form-control", placeholder: "Question" %>
   </div>
 
+  <div class="field">
+    add an image....
+    <%= f.file_field :image %>
+  </div>
+
   <div class="actions">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>

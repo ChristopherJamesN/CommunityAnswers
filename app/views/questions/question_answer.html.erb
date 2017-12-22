@@ -4,4 +4,6 @@
   <%= @question.content %>
 </h3>
 
+<%= image_tag(@question.image_url.to_s) %>
+
 <%= render 'question_answer_form', question: @question %>
