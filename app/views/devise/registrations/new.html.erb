@@ -19,10 +19,19 @@
   <p>Optional demographic information, all information is anonymized, and is used only for users informational purposes.</p>
 
   <div class="form-group">
-    <%= f.number_field :age, autocomplete: "off", class: "form-control", placeholder: "Add age (optional)", min: 1, max: 125 %>
+    <label>Age</label>
+    <select class="form-control" name="user[age]">
+      <option value=0>Prefer not to say</option>
+      <option value=12>5-17</option>
+      <option value=26>18-36</option>
+      <option value=45>36-54</option>
+      <option value=63>54-72</option>
+      <option value=80>72+</option>
+    </select>
   </div>
 
   <div class="form-group">
+    <label>Gender</label>
     <select class="form-control" name="user[sex]">
       <option value="None">Prefer not to say</option>
       <option value="Male">Male</option>
