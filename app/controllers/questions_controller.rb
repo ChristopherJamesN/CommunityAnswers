@@ -64,7 +64,7 @@ class QuestionsController < ApplicationController
       current_user.questions << @question
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
-        format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
+        format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
         format.json { render :show, status: :ok, location: @question }
       end
     elsif params[:question]["No"]
@@ -72,7 +72,7 @@ class QuestionsController < ApplicationController
       current_user.questions << @question
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
-        format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
+        format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
         format.json { render :show, status: :ok, location: @question }
       end
     elsif params[:question]["Unsure"]
@@ -80,7 +80,7 @@ class QuestionsController < ApplicationController
       current_user.questions << @question
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
-        format.html { redirect_to questions_path, notice: 'Question was successfully answered.' }
+        format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
         format.json { render :show, status: :ok, location: @question }
       end
     else
