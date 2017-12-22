@@ -26,4 +26,4 @@
   <%= @question.comments %>
 </p>
 
-<%= image_tag(@question.image_url.to_s) %>
+<%= image_tag(@question.image_url(:thumb).to_s) %>
