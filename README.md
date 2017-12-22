@@ -1,5 +1,5 @@
 # README
-A web application built on Rails used to aggregate community answers to user questions based on demographic information.
+A web application built on Rails used to aggregate community answers to user questions. Demo hosted on Heroku here: https://community-answers.herokuapp.com/.
 
 ## Installation
 To test out this application locally, fork and clone the repo.
