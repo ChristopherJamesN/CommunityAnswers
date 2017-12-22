@@ -15,9 +15,9 @@
     <%= form.text_field :content, id: :question_content, class: "form-control", placeholder: "Question" %>
   </div>
 
-  <div class="field">
-    add an image....
-    <%= f.file_field :image %>
+  <div class="form-group">
+    Add an image to your question:
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">
