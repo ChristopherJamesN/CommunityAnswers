@@ -25,6 +25,8 @@
   <strong class="col-sm-3 row">Comments:</strong>
   <%= @question.comments %>
 </p>
-<br>
 
-<%= image_tag(@question.image_url(:thumb).to_s) %>
+<% if @question.image_url(:thumb) != nil %>
+  <br>
+  <%= image_tag(@question.image_url(:thumb).to_s) %>
+<% end %>
