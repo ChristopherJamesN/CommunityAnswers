@@ -4,7 +4,10 @@
   <%= @question.content %>
 </h3>
 
-<%= image_tag(@question.image_url(:thumb).to_s) %>
-<br></br>
+
+<% if @question.image_url(:thumb) != nil %>
+  <%= image_tag(@question.image_url(:thumb).to_s) %>
+  <br></br>
+<% end %>
 
 <%= render 'question_answer_form', question: @question %>
