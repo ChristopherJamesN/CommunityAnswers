@@ -26,6 +26,14 @@
   <%= @question.comments %>
 </p>
 
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Breakdown by Gender:</strong>
+</p>
+
+<p class="col-sm-10 row">
+  <strong class="col-sm-3 row">Breakdown by Age Range:</strong>
+</p>
+
 <% if @question.image_url(:thumb) != nil %>
   <br>
   <%= image_tag(@question.image_url(:thumb).to_s) %>
