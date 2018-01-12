@@ -7,204 +7,198 @@
 </p>
 
 <p class="col-sm-10 row">
-  <strong class="col-sm-3 row">Yes:</strong>
-  <%= @question.yes %>
-</p>
-
-<p class="col-sm-10 row">
-  <strong class="col-sm-3 row">No:</strong>
-  <%= @question.no %>
-</p>
-
-<p class="col-sm-10 row">
-  <strong class="col-sm-3 row">Unsure:</strong>
-  <%= @question.unsure %>
-</p>
-
-<p class="col-sm-10 row">
   <strong class="col-sm-3 row">Comments:</strong>
   <%= @question.comments %>
 </p>
 
-<h3 class="col-sm-10 row">Breakdown by Gender:</h3>
-  <ul>
-    <li>
-      <h4>Male</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>Female</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>Undisclosed</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
+<h3 class="col-sm-10 row">Vote Breakdown</h3>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @question.yes %></td>
+      <td><%= @question.no %></td>
+      <td><%= @question.unsure %></td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 class="col-sm-10 row"> Breakdown by Age Range: </h3>
-  <ul>
-    <li>
-      <h4>5-17</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>18-36</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>36-54</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>54-72</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>72+</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-    <li>
-      <h4>Prefer not say</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Yes</th>
-            <th>No</th>
-            <th>Unsure</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
+<h3 class="col-sm-10 row">Vote Breakdown by Gender</h3>
+<br>
 
+<h4>Male</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Female</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Undisclosed</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="col-sm-10 row">
+  Breakdown by Age Range
+</h3>
+<br>
+
+<h4>5-17</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>18-36</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>36-54</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>54-72</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>72+</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Prefer not say</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Unsure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 
 <% if @question.image_url(:thumb) != nil %>
   <br>
