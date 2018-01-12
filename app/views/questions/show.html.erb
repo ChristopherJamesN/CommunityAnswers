@@ -11,6 +11,11 @@
   <%= @question.comments %>
 </p>
 
+<% if @question.image_url(:thumb) != nil %>
+  <br>
+  <%= image_tag(@question.image_url(:thumb).to_s) %>
+<% end %>
+
 <h3 class="col-sm-10 row">Vote Breakdown</h3>
 <br>
 <table class="table">
@@ -199,8 +204,3 @@
     </tr>
   </tbody>
 </table>
-
-<% if @question.image_url(:thumb) != nil %>
-  <br>
-  <%= image_tag(@question.image_url(:thumb).to_s) %>
-<% end %>
