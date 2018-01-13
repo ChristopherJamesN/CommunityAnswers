@@ -43,6 +43,30 @@ class QuestionsController < ApplicationController
     @question.no = 0
     @question.yes = 0
     @question.unsure = 0
+    @question.yes12 = 0
+    @question.yes26 = 0
+    @question.yes45 = 0
+    @question.yes63 = 0
+    @question.yes80 = 0
+    @question.yes_male = 0
+    @question.yes_female = 0
+    @question.yes_other = 0
+    @question.no12 = 0
+    @question.no26 = 0
+    @question.no45 = 0
+    @question.no63 = 0
+    @question.no80 = 0
+    @question.no_male = 0
+    @question.no_female = 0
+    @question.no_other = 0
+    @question.unsure12 = 0
+    @question.unsure26 = 0
+    @question.unsure45 = 0
+    @question.unsure63 = 0
+    @question.unsure80 = 0
+    @question.unsure_male = 0
+    @question.unsure_female = 0
+    @question.unsure_other = 0
     current_user.questions << @question
 
     respond_to do |format|
