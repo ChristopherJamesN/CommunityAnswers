@@ -16,173 +16,203 @@
   <%= image_tag(@question.image_url(:thumb).to_s) %>
 <% end %>
 
-<h3 class="col-sm-10 row">Vote Breakdown</h3>
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes %></td>
-      <td><%= @question.no %></td>
-      <td><%= @question.unsure %></td>
-    </tr>
-  </tbody>
-</table>
+<div id="accordion" role="tablist">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+          Overall Vote Breakdown
+        </a>
+      </h5>
+    </div>
 
-<h3 class="col-sm-10 row">Vote Breakdown by Gender</h3>
-<br>
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes %></td>
+              <td><%= @question.no %></td>
+              <td><%= @question.unsure %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+          Vote Breakdown by Gender
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <h4>Male</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes_male %></td>
+              <td><%= @question.no_male %></td>
+              <td><%= @question.unsure_male %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4>Male</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes_male %></td>
-      <td><%= @question.no_male %></td>
-      <td><%= @question.unsure_male %></td>
-    </tr>
-  </tbody>
-</table>
+        <h4>Female</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes_female %></td>
+              <td><%= @question.no_female %></td>
+              <td><%= @question.unsure_female %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4>Female</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes_female %></td>
-      <td><%= @question.no_female %></td>
-      <td><%= @question.unsure_female %></td>
-    </tr>
-  </tbody>
-</table>
+        <h4>Other Identification</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes_other %></td>
+              <td><%= @question.no_other %></td>
+              <td><%= @question.unsure_other %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+          Vote Breakdown by Age Group
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <h4>5-17</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes12 %></td>
+              <td><%= @question.no12 %></td>
+              <td><%= @question.unsure12 %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4>Other Identification</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes_other %></td>
-      <td><%= @question.no_other %></td>
-      <td><%= @question.unsure_other %></td>
-    </tr>
-  </tbody>
-</table>
+        <h4>18-36</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes26 %></td>
+              <td><%= @question.no26 %></td>
+              <td><%= @question.unsure26 %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h3 class="col-sm-10 row">
-  Breakdown by Age Range
-</h3>
-<br>
+        <h4>36-54</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes45 %></td>
+              <td><%= @question.no45 %></td>
+              <td><%= @question.unsure45 %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4>5-17</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes12 %></td>
-      <td><%= @question.no12 %></td>
-      <td><%= @question.unsure12 %></td>
-    </tr>
-  </tbody>
-</table>
+        <h4>54-72</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes63 %></td>
+              <td><%= @question.no63 %></td>
+              <td><%= @question.unsure63 %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4>18-36</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes26 %></td>
-      <td><%= @question.no26 %></td>
-      <td><%= @question.unsure26 %></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>36-54</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes45 %></td>
-      <td><%= @question.no45 %></td>
-      <td><%= @question.unsure45 %></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>54-72</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes63 %></td>
-      <td><%= @question.no63 %></td>
-      <td><%= @question.unsure63 %></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>72+</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Unsure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @question.yes80 %></td>
-      <td><%= @question.no80 %></td>
-      <td><%= @question.unsure80 %></td>
-    </tr>
-  </tbody>
-</table>
+        <h4>72+</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Yes</th>
+              <th>No</th>
+              <th>Unsure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @question.yes80 %></td>
+              <td><%= @question.no80 %></td>
+              <td><%= @question.unsure80 %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
