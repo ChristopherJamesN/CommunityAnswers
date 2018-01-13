@@ -62,6 +62,27 @@ class QuestionsController < ApplicationController
     if params[:question]["Yes"]
       @question.update(yes: @question.yes + 1)
       current_user.questions << @question
+
+      if current_user.age == 12
+        @question.update(yes12: @question.yes12 + 1)
+      elsif current_user.age == 26
+        @question.update(yes26: @question.yes26 + 1)
+      elsif current_user.age == 45
+        @question.update(yes45: @question.yes45 + 1)
+      elsif current_user.age == 63
+        @question.update(yes63: @question.yes63 + 1)
+      elsif current_user.age == 80
+        @question.update(yes80: @question.yes80 + 1)
+      end
+
+      if current_user.sex == "Male"
+        @question.update(yes_male: @question.yes_male + 1)
+      elsif current_user.sex == "Female"
+        @question.update(yes_female: @question.yes_female + 1)
+      elsif current_user.sex == "Other"
+        @question.update(yes_other: @question.yes_other + 1)
+      end
+
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
         format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
@@ -70,6 +91,27 @@ class QuestionsController < ApplicationController
     elsif params[:question]["No"]
       @question.update(no: @question.no + 1)
       current_user.questions << @question
+
+      if current_user.age == 12
+        @question.update(no12: @question.no12 + 1)
+      elsif current_user.age == 26
+        @question.update(no26: @question.no26 + 1)
+      elsif current_user.age == 45
+        @question.update(no45: @question.no45 + 1)
+      elsif current_user.age == 63
+        @question.update(no63: @question.no63 + 1)
+      elsif current_user.age == 80
+        @question.update(no80: @question.no80 + 1)
+      end
+
+      if current_user.sex == "Male"
+        @question.update(no_male: @question.no_male + 1)
+      elsif current_user.sex == "Female"
+        @question.update(no_female: @question.no_female + 1)
+      elsif current_user.sex == "Other"
+        @question.update(no_other: @question.no_other + 1)
+      end
+
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
         format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
@@ -78,6 +120,27 @@ class QuestionsController < ApplicationController
     elsif params[:question]["Unsure"]
       @question.update(unsure: @question.unsure + 1)
       current_user.questions << @question
+
+      if current_user.age == 12
+        @question.update(unsure12: @question.unsure12 + 1)
+      elsif current_user.age == 26
+        @question.update(unsure26: @question.unsure26 + 1)
+      elsif current_user.age == 45
+        @question.update(unsure45: @question.unsure45 + 1)
+      elsif current_user.age == 63
+        @question.update(unsure63: @question.unsure63 + 1)
+      elsif current_user.age == 80
+        @question.update(unsure80: @question.unsure80 + 1)
+      end
+
+      if current_user.sex == "Male"
+        @question.update(unsure_male: @question.unsure_male + 1)
+      elsif current_user.sex == "Female"
+        @question.update(unsure_female: @question.unsure_female + 1)
+      elsif current_user.sex == "Other"
+        @question.update(unsure_other: @question.unsure_other + 1)
+      end
+
       current_user.update(points: current_user.points += 1)
       respond_to do |format|
         format.html { redirect_to questions_path, notice: "Question was successfully answered. You have #{current_user.points} points!" }
