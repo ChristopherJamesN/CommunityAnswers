@@ -7,6 +7,8 @@ class CreateQuestions < ActiveRecord::Migration[5.1]
       t.integer :unsure
       t.string :comments
       t.integer :user_id
+      t.string :sex
+      t.integer :age
 
       t.timestamps
     end

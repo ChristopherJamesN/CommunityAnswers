@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20171222204544) do
     t.integer "unsure"
     t.string "comments"
     t.integer "user_id"
+    t.string "sex"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
