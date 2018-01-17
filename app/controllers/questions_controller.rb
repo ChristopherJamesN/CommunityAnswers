@@ -5,12 +5,12 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.where.not(user_id: current_user.id)
+    @questions = Question.where.not(user_id: current_user.id).paginate(:page => params[:page], :per_page => 5)
     render :answer
   end
 
   def your_questions
-    @questions = Question.where(user_id: current_user.id)
+    @questions = Question.where(user_id: current_user.id).paginate(:page => params[:page], :per_page => 5)
     render :index
   end
 
