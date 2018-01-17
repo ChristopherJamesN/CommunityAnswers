@@ -1,5 +1,7 @@
 <h1>Questions</h1>
-<%= will_paginate @questions %>
+<ul class="pagination">
+  <%= will_paginate @questions, :link_separator => "&nbsp;" %>
+</ul>
 
 <table class="table">
   <thead>
